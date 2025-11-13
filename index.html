@@ -3,97 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>תפריט שתייה — The Boiler Bar</title>
-  <meta name="description" content="תפריט שתייה מעודכן של The Boiler Bar" />
+  <title>תפריט — The Boiler Bar</title>
+  <meta name="description" content="תפריט שתייה ובקבוקים של The Boiler Bar" />
   <style>
-    :root { --bg:#0f1115; --card:#171a21; --text:#e8eaed; --muted:#aab2c0; --accent:#00d4ff; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:system-ui, -apple-system, "Segoe UI", Arial; background:var(--bg); color:var(--text); }
-    .wrap { max-width:880px; margin:auto; padding:28px 18px 80px; }
-    header { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
-    .logo { width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,var(--accent),#7cf); }
-    h1 { margin:0; font-size:28px; }
-    .sub { color:var(--muted); font-size:14px; }
-    .grid { display:grid; grid-template-columns:1fr; gap:14px; }
-    @media (min-width:720px){ .grid{ grid-template-columns:repeat(2,1fr);} }
-    .card { background:var(--card); border:1px solid #222732; border-radius:18px; padding:16px 18px; }
-    .cat { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
-    .cat h2 { margin:0; font-size:18px; }
-    .tag { font-size:12px; color:#0f1115; background:var(--accent); padding:4px 10px; border-radius:999px; }
-    .item { display:flex; justify-content:space-between; gap:10px; padding:10px 0; border-top:1px dashed #2a3040; }
-    .item:first-of-type { border-top:none; }
-    .name { font-weight:600; }
-    .desc { color:var(--muted); font-size:13px; margin-top:4px; }
-    .price { white-space:nowrap; font-variant-numeric:tabular-nums; }
-    footer { margin-top:22px; color:var(--muted); font-size:13px; text-align:center; }
-    .pill { display:inline-block; border:1px solid #2a3040; padding:6px 10px; border-radius:999px; }
-    .notice { margin-top:18px; font-size:12px; color:var(--muted); text-align:center; }
-    /* === מדריך עריכה קצר בתוך הקובץ ===
-       1) שנה את הכותרות, שמות המשקאות והמחירים כאן ב-HTML.
-       2) שמור את הקובץ כ-index.html, העלה להוסטינג סטטי (GitHub Pages).
-       3) לעדכון מחירים – עריכה ושמירה, אין צורך לגעת ב-CSS.
-    */
+    :root { --bg:#0f1115; --text:#e8eaed; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",Arial; text-align:center; }
+    .wrap { max-width:900px; margin:auto; padding:20px; }
+    img { width:100%; height:auto; border-radius:12px; margin-bottom:16px; box-shadow:0 0 15px rgba(0,0,0,0.3); }
+    footer { color:#999; font-size:12px; margin-top:20px; }
   </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <img src="logo.png" alt="לוגו הבר" style="width:60px; height:auto; border-radius:50px;" />
-    <div>
-      <h1>תפריט שתייה —  BØiler 02 </h1>
-      <div class="sub">מיקום • א–ה 18:00–02:00 • כשר</div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <!-- === קטגוריה: קוקטיילים === -->
-    <section class="card">
-      <div class="cat"><h2>קוקטיילים</h2><span class="tag">Signature</span></div>
-      <div class="item">
-        <div>
-          <div class="name">ג׳רוסלם סאוור</div>
-          <div class="desc">וויסקי, לימון, דבש, חלבון.</div>
-        </div>
-        <div class="price">₪42</div>
-      </div>
-      <div class="item">
-        <div>
-          <div class="name">מדבר ניוגרוני</div>
-          <div class="desc">ג׳ין, ורמוט, ביטר עם טוויסט הדרים.</div>
-        </div>
-        <div class="price">₪44</div>
-      </div>
-    </section>
-
-    <!-- === קטגוריה: בירות === -->
-    <section class="card">
-      <div class="cat"><h2>בירות</h2><span class="tag">Draft</span></div>
-      <div class="item"><div class="name">לאגר מהחבית (חצי)</div><div class="price">₪28</div></div>
-      <div class="item"><div class="name">אייל מהחבית (חצי)</div><div class="price">₪32</div></div>
-      <div class="item"><div class="name">בקבוק ללא גלוטן</div><div class="price">₪24</div></div>
-    </section>
-
-    <!-- === קטגוריה: יין === -->
-    <section class="card">
-      <div class="cat"><h2>יין</h2><span class="tag">כוס / בקבוק</span></div>
-      <div class="item"><div><div class="name">לבן יבש</div><div class="desc">רענן, פירותי.</div></div><div class="price">₪28 / ₪95</div></div>
-      <div class="item"><div class="name">אדום בלנד</div><div class="price">₪30 / ₪110</div></div>
-      <div class="item"><div class="name">רוזה</div><div class="price">₪28 / ₪95</div></div>
-    </section>
-
-    <!-- === קטגוריה: ללא אלכוהול === -->
-    <section class="card">
-      <div class="cat"><h2>ללא אלכוהול</h2><span class="tag">Zero</span></div>
-      <div class="item"><div class="name">ג׳ינג׳ר ביר</div><div class="price">₪16</div></div>
-      <div class="item"><div class="name">סודה בהרכבה עצמית</div><div class="price">₪10</div></div>
-      <div class="item"><div class="name">לימונדה ביתית</div><div class="price">₪14</div></div>
-    </section>
+  <div class="wrap">
+    <img src="menu1.jpg" alt="תפריט עמוד 1">
+    <img src="menu2.jpg" alt="תפריט עמוד 2">
+    <img src="menu3.jpg" alt="תפריט עמוד 3">
+    <footer>© BØiler 02 — עודכן לאחרונה: נובמבר 2025</footer>
   </div>
-
-  <footer>
-    <span class="pill">אלכוהול נמכר מגיל 18+</span>
-    <div class="notice">עודכן אחרון: 23.09.2025</div>
-  </footer>
-</div>
 </body>
 </html>
